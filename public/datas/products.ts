@@ -1,0 +1,208 @@
+export interface ProductVariant {
+  name: string;
+  image: string;
+  gallery: string[];
+}
+
+export interface Product {
+  id: number;
+  name: string;
+  category: string;
+  price: number;
+  oldPrice?: number;
+  image: string;
+  badge?: "Sale" | "New";
+  description: string;
+  sku: string;
+  slug: string;
+  tags: string[];
+  gallery: string[];
+  videos: string[]; // YouTube video IDs
+  variantType?: string; // e.g., "Colors", "Flavors", "Sizes"
+  variants?: ProductVariant[];
+}
+
+export const products: Product[] = [
+  {
+    id: 1,
+    name: "FILM EYESHADOW",
+    category: "Lip Gloss",
+    price: 23.0,
+    oldPrice: 27.0,
+    image: "/Images/products/1.jpg",
+    badge: "Sale",
+    description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut. Eu agam malorum nec. Eu has vide putent, dico option nominati no eam. Ea erant impetus consequuntur eos, velit congue vidisse eos ne.",
+    sku: "001",
+    slug: "film-eyeshadow",
+    tags: ["Cosmetic", "Make Up"],
+    gallery: ["/Images/products/1.jpg", "/Images/products/2.jpg", "/Images/products/3.jpg"],
+    variantType: "Colors",
+    variants: [
+      {
+        name: "Classic Pink",
+        image: "/Images/products/1.jpg",
+        gallery: ["/Images/products/1.jpg", "/Images/products/2.jpg", "/Images/products/3.jpg"]
+      },
+      {
+        name: "Velvet Red",
+        image: "/Images/products/4.jpeg",
+        gallery: ["/Images/products/4.jpeg", "/Images/products/5.jpeg"]
+      },
+      {
+        name: "Deep Ocean",
+        image: "https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg",
+        gallery: ["https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg", "/Images/products/2.jpg"]
+      }
+    ],
+    videos: ["vP9X2V9c3Uw", "6H85SjZ6BIA"]
+  },
+  {
+    id: 2,
+    name: "WILD PALETTES",
+    category: "Lip Gloss",
+    price: 25.0,
+    image: "/Images/products/2.jpg",
+    description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut. Eu agam malorum nec. Eu has vide putent, dico option nominati no eam.",
+    sku: "002",
+    slug: "wild-palettes",
+    tags: ["Cosmetic", "Palettes"],
+    gallery: ["/Images/products/2.jpg", "/Images/products/4.jpeg"],
+    videos: ["vP9X2V9c3Uw"]
+  },
+  {
+    id: 3,
+    name: "ROSE SAFARI",
+    category: "Lip Gloss",
+    price: 35.0,
+    image: "/Images/products/3.jpg",
+    description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut. Eu agam malorum nec.",
+    sku: "003",
+    slug: "rose-safari",
+    tags: ["Classic", "Lipstick"],
+    gallery: ["/Images/products/3.jpg"],
+    videos: ["vP9X2V9c3Uw"]
+  },
+  {
+    id: 4,
+    name: "SUMMER MIRAGE",
+    category: "Lip Gloss",
+    price: 32.0,
+    image: "/Images/products/4.jpeg",
+    badge: "New",
+    description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
+    sku: "004",
+    slug: "summer-mirage",
+    tags: ["Summer", "Limited"],
+    gallery: ["/Images/products/4.jpeg"],
+    videos: ["vP9X2V9c3Uw"]
+  },
+  {
+    id: 5,
+    name: "SUMMER DRAMA",
+    category: "Lip Gloss",
+    price: 32.0,
+    image: "/Images/products/5.jpeg",
+    badge: "New",
+    description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
+    sku: "005",
+    slug: "summer-drama",
+    tags: ["Drama", "Intense"],
+    gallery: ["/Images/products/5.jpeg"],
+    videos: ["vP9X2V9c3Uw"]
+  },
+  {
+    id: 6,
+    name: "VELVET MATTE",
+    category: "Lipstick",
+    price: 18.0,
+    image: "https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg",
+    badge: "Sale",
+    description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
+    sku: "006",
+    slug: "velvet-matte",
+    tags: ["Matte", "Velvet"],
+    gallery: ["https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg"],
+    videos: ["vP9X2V9c3Uw"]
+  },
+  {
+    id: 7,
+    name: "GLOW SERUM",
+    category: "Skin Care",
+    price: 45.0,
+    image: "https://images.pexels.com/photos/3618606/pexels-photo-3618606.jpeg",
+    badge: "New",
+    description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
+    sku: "007",
+    slug: "glow-serum",
+    tags: ["Serum", "Glow"],
+    gallery: ["https://images.pexels.com/photos/3618606/pexels-photo-3618606.jpeg"],
+    videos: ["vP9X2V9c3Uw"]
+  },
+  {
+    id: 8,
+    name: "SILK FOUNDATION",
+    category: "Skin Care",
+    price: 38.0,
+    image: "https://images.pexels.com/photos/3321416/pexels-photo-3321416.jpeg",
+    description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
+    sku: "008",
+    slug: "silk-foundation",
+    tags: ["Foundation", "Silk"],
+    gallery: ["https://images.pexels.com/photos/3321416/pexels-photo-3321416.jpeg"],
+    videos: ["vP9X2V9c3Uw"]
+  },
+  {
+    id: 9,
+    name: "EYELASH CURLER",
+    category: "Eye Care",
+    price: 12.0,
+    image: "https://images.pexels.com/photos/4620843/pexels-photo-4620843.jpeg",
+    description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
+    sku: "009",
+    slug: "eyelash-curler",
+    tags: ["Tools", "Curler"],
+    gallery: ["https://images.pexels.com/photos/4620843/pexels-photo-4620843.jpeg"],
+    videos: ["vP9X2V9c3Uw"]
+  },
+  {
+    id: 10,
+    name: "BROW GEL",
+    category: "Eye Care",
+    price: 15.0,
+    image: "https://images.pexels.com/photos/2688991/pexels-photo-2688991.jpeg",
+    badge: "New",
+    description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
+    sku: "010",
+    slug: "brow-gel",
+    tags: ["Brows", "Gel"],
+    gallery: ["https://images.pexels.com/photos/2688991/pexels-photo-2688991.jpeg"],
+    videos: ["vP9X2V9c3Uw"]
+  },
+  {
+    id: 11,
+    name: "PEACH BLUSH",
+    category: "Cheek",
+    price: 22.0,
+    image: "https://images.pexels.com/photos/3762466/pexels-photo-3762466.jpeg",
+    badge: "Sale",
+    description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
+    sku: "011",
+    slug: "peach-blush",
+    tags: ["Blush", "Peach"],
+    gallery: ["https://images.pexels.com/photos/3762466/pexels-photo-3762466.jpeg"],
+    videos: ["vP9X2V9c3Uw"]
+  },
+  {
+    id: 12,
+    name: "MATTE BRONZER",
+    category: "Cheek",
+    price: 28.0,
+    image: "https://images.pexels.com/photos/3321411/pexels-photo-3321411.jpeg",
+    description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
+    sku: "012",
+    slug: "matte-bronzer",
+    tags: ["Bronzer", "Matte"],
+    gallery: ["https://images.pexels.com/photos/3321411/pexels-photo-3321411.jpeg"],
+    videos: ["vP9X2V9c3Uw"]
+  },
+];
