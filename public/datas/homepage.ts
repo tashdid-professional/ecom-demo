@@ -48,6 +48,8 @@ export interface InstagramPost {
 }
 
 export interface AboutData {
+  subtitle: string;
+  title: string;
   description: string;
   featuredImage: string;
 }
