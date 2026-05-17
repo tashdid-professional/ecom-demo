@@ -61,7 +61,7 @@ export default async function BlogDetails({
         </div>
 
         {/* Content Section */}
-        <div className="container mx-auto px-6 md:px-4 max-w-4xl text-center">
+        <div className="container mx-auto px-6 md:px-4 max-w-4xl">
           <div className="flex flex-wrap items-center justify-center gap-2 text-[13px] md:text-[14px] font-cormorant italic text-[#999] mb-4">
             <span>{blog.month} {blog.day}</span>
             <span className="font-lato">-</span>
@@ -70,11 +70,11 @@ export default async function BlogDetails({
             <span className="px-1">By {blog.author}</span>
           </div>
           
-          <h2 className="text-xl md:text-4xl tracking-[0.1em] text-black mb-6 md:mb-8 leading-tight uppercase font-light">
+          <h2 className="text-xl md:text-4xl tracking-[0.1em] text-black mb-6 md:mb-8 leading-tight uppercase font-light text-center">
             {blog.title}
           </h2>
 
-          <div className="space-y-6 text-[#a1a1a1] font-cormorant text-base md:text-lg leading-relaxed text-center">
+          <div className="space-y-6 text-[#6b6565] font-cormorant text-base md:text-lg leading-relaxed text-justify">
             <p className="whitespace-pre-line">
               {blog.description}
             </p>
@@ -90,6 +90,61 @@ export default async function BlogDetails({
               {blog.description}
             </p>
           </div>
+        </div>
+
+        {/* Comment Form Section */}
+        <div className="container mx-auto px-6 md:px-4 max-w-4xl mt-20 border-t border-gray-100 pt-16">
+          <h3 className="text-xl md:text-2xl tracking-[0.2em] text-black mb-10 uppercase ">
+            Post a Comment
+          </h3>
+          
+          <form className="space-y-4">
+            <div className="w-full">
+              <textarea
+                placeholder="Your comment"
+                rows={8}
+                className="w-full border border-gray-200 p-4 font-cormorant italic outline-none focus:border-black transition-colors resize-none"
+              ></textarea>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full border border-gray-200 p-4 font-cormorant italic outline-none focus:border-black transition-colors"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="w-full border border-gray-200 p-4 font-cormorant italic outline-none focus:border-black transition-colors"
+                required
+              />
+              <input
+                type="text"
+                placeholder="Website"
+                className="w-full border border-gray-200 p-4 font-cormorant italic outline-none focus:border-black transition-colors"
+              />
+            </div>
+
+            <div className="flex items-start gap-3 py-2">
+              <input 
+                type="checkbox" 
+                id="save-info" 
+                className="mt-1.5 border-gray-300 rounded"
+              />
+              <label htmlFor="save-info" className="text-[13px] md:text-[14px] font-cormorant text-[#a1a1a1] italic leading-relaxed">
+                Save my name, email, and website in this browser for the next time I comment.
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              className="mt-4 bg-black text-white px-12 py-4 text-[11px] tracking-[0.3em] font-lato uppercase hover:bg-[#ff3366] transition-colors duration-300"
+            >
+              Submit
+            </button>
+          </form>
         </div>
       </article>
       <Footer />

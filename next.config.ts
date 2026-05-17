@@ -12,6 +12,14 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'img.youtube.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'vibeas.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'biagiotti.qodeinteractive.com',
+      },
     ],
   },
 };

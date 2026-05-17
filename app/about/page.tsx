@@ -11,7 +11,7 @@ export default function AboutPage() {
       <Navbar />
       
       {/* Featured Header Image */}
-      <div className="w-full h-[400px] md:h-[500px] relative overflow-hidden mt-20">
+      <div className="w-full h-[400px] md:h-[500px] relative overflow-hidden ">
         <Image
           src={aboutData.featuredImage}
           alt={aboutData.title}

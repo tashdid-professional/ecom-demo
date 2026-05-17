@@ -45,7 +45,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="relative bg-[#fdf0ee] py-20 md:py-32 overflow-hidden min-h-[500px] flex items-center">
+    <section className="relative bg-[#fdf0ee] py-16 md:py-24 overflow-hidden min-h-[400px] flex items-center">
       {/* Background Floating Petals (Symbolic) */}
       <div className="absolute top-10 right-10 w-32 h-32 bg-[#700d33] rounded-full blur-3xl opacity-10 pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-48 h-48 bg-[#700d33] rounded-full blur-3xl opacity-10 pointer-events-none" />
@@ -59,11 +59,11 @@ export default function Testimonials() {
 
       <div className="container mx-auto px-6 relative z-10 text-center max-w-5xl">
         {/* Header */}
-        <div className="mb-12 relative inline-block">
+        <div className="relative inline-block">
           <h4 className="font-tuesday-night text-3xl md:text-4xl text-[#ecd1cd] absolute -top-8 md:-top-10 left-1/2 -translate-x-1/2 whitespace-nowrap">
             perfect shades
           </h4>
-          <h2 className="font-lato text-2xl md:text-3xl tracking-[0.2em] uppercase text-black mt-4">
+          <h2 className="font-lato text-2xl md:text-3xl tracking-[0.2em] uppercase text-black mt-1">
             Testimonials
           </h2>
         </div>
@@ -85,10 +85,10 @@ export default function Testimonials() {
                 }}
                 className="absolute w-full px-4 md:px-0"
               >
-                <p className="font-cormorant italic text-[#666] text-[18px] md:text-[22px] leading-relaxed mb-6 md:mb-8">
+                <p className="font-cormorant italic text-[#444343] text-[18px] md:text-[25px] leading-relaxed mb-6 md:mb-8">
                   "{testimonials[currentIndex].content}"
                 </p>
-                <p className="font-cormorant text-[#999] text-xs md:text-sm tracking-widest uppercase">
+                <p className="font-cormorant text-[#6e6e6e] text-xs md:text-sm tracking-widest uppercase">
                   - {testimonials[currentIndex].author} -
                 </p>
               </motion.div>

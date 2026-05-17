@@ -82,7 +82,7 @@ export default function Navbar() {
                   <Link href="/" className={`relative py-1 border-b transition-all duration-300 ${pathname === "/" ? "border-black" : "border-transparent"} hover:border-black`}>Home</Link>
                   <Link href="/shop" className={`relative py-1 border-b transition-all duration-300 ${pathname === "/shop" ? "border-black" : "border-transparent"} hover:border-black`}>Shop</Link>
                   <Link href="/" className="px-10">
-                    <img src="/Images/logo.png" alt="Biagiotti Logo" className="h-10 w-auto" />
+                    <img src="/Images/logo.png" alt="Biagiotti Logo" width={160} height={40} className="h-10 w-auto" />
                   </Link>
                   <Link href="/contact" className={`relative py-1 border-b transition-all duration-300 ${pathname === "/contact" ? "border-black" : "border-transparent"} hover:border-black`}>Contact</Link>
                   <Link href="/about" className={`relative py-1 border-b transition-all duration-300 ${pathname === "/about" ? "border-black" : "border-transparent"} hover:border-black`}>About</Link>
@@ -91,7 +91,7 @@ export default function Navbar() {
                 {/* Mobile & Tablet Layout */}
                 <div className="flex lg:hidden items-center justify-between w-full">
                   <Link href="/">
-                    <img src="/Images/logo.png" alt="Biagiotti Logo" className="h-8 w-auto" />
+                    <img src="/Images/logo.png" alt="Biagiotti Logo" width={128} height={32} className="h-8 w-auto" />
                   </Link>
                   <button onClick={() => setIsSideMenuOpen(true)} className="text-black">
                     <Menu size={26} strokeWidth={1.5} />
@@ -115,7 +115,7 @@ export default function Navbar() {
       <header className={`w-full fixed top-0 z-50 transition-all duration-500 bg-black  ${
         isScrolled ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
       }`}>
-        <nav className="px-6 flex items-center relative transition-all duration-500 h-[60px] md:h-[50px]">
+        <nav className="px-6 flex items-center relative transition-all duration-500 h-[70px] md:h-[65px]">
           {isSearchOpen ? (
             <form onSubmit={handleSearch} className="absolute inset-0 bg-white z-50 flex items-center px-6 md:px-10">
               <input
@@ -138,7 +138,7 @@ export default function Navbar() {
                 <Link href="/" className={`relative py-1 border-b transition-all duration-300 ${pathname === "/" ? "border-white" : "border-transparent"} hover:border-white`}>Home</Link>
                 <Link href="/shop" className={`relative py-1 border-b transition-all duration-300 ${pathname === "/shop" ? "border-white" : "border-transparent"} hover:border-white`}>Shop</Link>
                 <Link href="/" className="px-10">
-                  <img src="/Images/logo.png" alt="Biagiotti Logo" className="h-8 w-auto invert" />
+                  <img src="/Images/logo.png" alt="Biagiotti Logo" width={160} height={40} className="h-10 w-auto invert" />
                 </Link>
                 <Link href="/contact" className={`relative py-1 border-b transition-all duration-300 ${pathname === "/contact" ? "border-white" : "border-transparent"} hover:border-white`}>Contact</Link>
                 <Link href="/about" className={`relative py-1 border-b transition-all duration-300 ${pathname === "/about" ? "border-white" : "border-transparent"} hover:border-white`}>About</Link>
@@ -147,12 +147,20 @@ export default function Navbar() {
               {/* Mobile Sticky Layout */}
               <div className="flex lg:hidden items-center justify-between w-full">
                 <Link href="/">
-                  <img src="/Images/logo.png" alt="Biagiotti Logo" className="h-7 w-auto invert" />
+                  <img src="/Images/logo.png" alt="Biagiotti Logo" width={112} height={28} className="h-7 w-auto invert" />
                 </Link>
                 <button onClick={() => setIsSideMenuOpen(true)} className="text-white">
                   <Menu size={26} strokeWidth={1.5} />
                 </button>
               </div>
+
+              {/* Desktop Sticky Icons (Visible on Scroll) */}
+              {/* <div className="hidden lg:flex items-center gap-6 ml-auto relative z-10 text-white">
+                <button onClick={() => setIsSearchOpen(true)}><Search size={22} strokeWidth={1.5} /></button>
+                <button onClick={() => setIsSideMenuOpen(true)}>
+                  <Menu size={26} strokeWidth={1.5} />
+                </button>
+              </div> */}
             </>
           )}
         </nav>

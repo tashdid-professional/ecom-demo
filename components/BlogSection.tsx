@@ -24,8 +24,8 @@ const BlogSection: React.FC<BlogSectionProps> = ({ blogs }) => {
         </p>
       </div>
 
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-8 lg:gap-8">
+      <div className="container mx-auto px-6 lg:px-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {blogs.map((blog) => (
             <div key={blog.id} className="group">
               {/* Image Container 16:9 */}
@@ -37,7 +37,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({ blogs }) => {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* Date Tag */}
-                <div className="absolute top-4 left-4 bg-white/90 px-3 py-2 text-center min-w-[50px] shadow-sm">
+                <div className="absolute top-4 left-4 bg-[#fde9e4]/95 px-3 py-2 text-center min-w-[50px] shadow-sm">
                   <span className="block text-[10px] font-tuesday-night text-[#d4b1a4] leading-none mb-1">
                     {blog.month}
                   </span>

@@ -163,31 +163,31 @@ export const blogHeader = {
 export const qualities: Quality[] = [
   {
     id: 1,
-    icon: "/Images/qualities/fragrance.png",
+    icon: "https://images.pexels.com/photos/3966569/pexels-photo-3966569.jpeg?auto=compress&cs=tinysrgb&w=800",
     title: "FRAGRANCE",
     description: "At vero eos et accusamus et iusto odio dignissi mos ducimus qui blanditiis praesentium",
   },
   {
     id: 2,
-    icon: "/Images/qualities/quality.png",
+    icon: "https://images.pexels.com/photos/3373746/pexels-photo-3373746.jpeg?auto=compress&cs=tinysrgb&w=800",
     title: "QUALITY",
     description: "At vero eos et accusamus et iusto odio dignissi mos ducimus qui blanditiis praesentium",
   },
   {
     id: 3,
-    icon: "/Images/qualities/petroleum.png",
+    icon: "https://images.pexels.com/photos/3618606/pexels-photo-3618606.jpeg?auto=compress&cs=tinysrgb&w=800",
     title: "PETROLEUM",
     description: "At vero eos et accusamus et iusto odio dignissi mos ducimus qui blanditiis praesentium",
   },
   {
     id: 4,
-    icon: "/Images/qualities/colors.png",
+    icon: "https://images.pexels.com/photos/2080527/pexels-photo-2080527.jpeg?auto=compress&cs=tinysrgb&w=800",
     title: "COLORS",
     description: "At vero eos et accusamus et iusto odio dignissi mos ducimus qui blanditiis praesentium",
   },
   {
     id: 5,
-    icon: "/Images/qualities/natural.png",
+    icon: "https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg?auto=compress&cs=tinysrgb&w=800",
     title: "NATURAL",
     description: "At vero eos et accusamus et iusto odio dignissi mos ducimus qui blanditiis praesentium",
   },

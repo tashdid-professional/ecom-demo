@@ -19,12 +19,12 @@ export default function Home() {
       <Navbar />
       <Banner />
       <FeaturedProducts />
-      <Timeline data={timelineData} />
-      <Qualities data={qualities} />
-      <BlogSection blogs={featuredBlogs} />
       <InstagramShowcase posts={instagramPosts} />
       <Testimonials />
       <ServiceStats />
+      <Timeline data={timelineData} />
+      <Qualities data={qualities} />
+      <BlogSection blogs={featuredBlogs} />
       <Footer />
     </main>
   );

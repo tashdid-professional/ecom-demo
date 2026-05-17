@@ -72,22 +72,28 @@ export default function ShopPage() {
           
           {/* Sidebar - Categories */}
           <aside className="w-full md:w-1/4">
-            <div>
+            <div className="sticky top-24">
               <h2 className="text-xl tracking-[0.15em] text-[#1a1a1a] uppercase mb-6 md:mb-10 pb-4 border-b border-[#eee]">
                 Categories
               </h2>
-              <ul className="flex flex-wrap md:flex-col gap-x-6 gap-y-4">
+              {/* Desktop Categories List */}
+              <ul className="hidden md:flex flex-col gap-y-4">
                 {categories.map((category) => (
                   <li key={category}>
                     <button
                       onClick={() => handleCategoryChange(category)}
-                      className={`text-sm tracking-[0.1em] uppercase transition-colors duration-300 flex justify-between w-full group ${
+                      className={`text-[12px] tracking-[0.1em] uppercase transition-colors duration-300 flex justify-between w-full group ${
                         activeCategory === category
                           ? "text-[#d4b1a4]"
                           : "text-[#777] hover:text-[#1a1a1a]"
                       }`}
                     >
-                      <span>{category}</span>
+                      <span className="flex items-center gap-2">
+                        <span className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                          activeCategory === category ? "bg-[#d4b1a4] scale-100" : "bg-transparent scale-0"
+                        }`} />
+                        {category}
+                      </span>
                       <span className={`text-[10px] ${
                         activeCategory === category ? "text-[#d4b1a4]" : "text-[#ccc]"
                       }`}>
@@ -98,7 +104,25 @@ export default function ShopPage() {
                 ))}
               </ul>
 
-              
+              {/* Mobile Wrap Categories */}
+              <div className="md:hidden flex flex-wrap gap-2 pb-4">
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => handleCategoryChange(category)}
+                    className={`px-4 py-2 rounded-full text-[10px] tracking-[0.1em] uppercase transition-all duration-300 border ${
+                      activeCategory === category
+                        ? "bg-[#1a1a1a] text-white border-[#1a1a1a] shadow-sm"
+                        : "bg-white text-[#777] border-[#eee] hover:border-[#1a1a1a] hover:text-[#1a1a1a]"
+                    }`}
+                  >
+                    {category}
+                    <span className="ml-1.5 opacity-50 text-[8px]">
+                      ({category === "All" ? products.length : products.filter(p => p.category === category).length})
+                    </span>
+                  </button>
+                ))}
+              </div>
             </div>
           </aside>
 
