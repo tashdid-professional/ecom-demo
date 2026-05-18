@@ -151,9 +151,14 @@ export default function ProductDetailsPage() {
 
             {/* Purchase */}
             <div className="flex items-center gap-6 mb-8 md:mb-12">
-              <button className="w-full md:w-auto px-12 bg-black text-white h-14 text-[11px] md:text-xs tracking-[0.2em] uppercase hover:bg-[#d4b1a4] transition-all duration-500">
+              <a 
+                href={product.purchaseLink || "#"} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full md:w-auto px-12 bg-black text-white h-14 flex items-center justify-center text-[11px] md:text-xs tracking-[0.2em] uppercase hover:bg-[#ffffff] hover:border-black hover:border hover:text-black transition-all duration-500"
+              >
                 Purchase
-              </button>
+              </a>
             </div>
 
             {/* Meta */}

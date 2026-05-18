@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
@@ -8,8 +8,20 @@ import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/public/datas/products";
 import { shopHeader } from "@/public/datas/homepage";
+import { useSearchParams } from "next/navigation";
 
 export default function ShopPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ShopContent />
+    </Suspense>
+  );
+}
+
+function ShopContent() {
+  const searchParams = useSearchParams();
+  const searchQuery = searchParams.get("search") || "";
+  
   const [activeCategory, setActiveCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
@@ -20,15 +32,27 @@ export default function ShopPage() {
     return ["All", ...uniqueCategories.sort()];
   }, []);
 
-  // Filter products based on active category
+  // Filter products based on active category and search query
   const filteredProducts = useMemo(() => {
-    const filtered = activeCategory === "All" 
-      ? products 
-      : products.filter((p) => p.category === activeCategory);
+    let filtered = products;
+
+    // Filter by Search Query
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter((p) => 
+        p.name.toLowerCase().includes(query) || 
+        p.category.toLowerCase().includes(query) ||
+        (p.description && p.description.toLowerCase().includes(query))
+      );
+    }
+
+    // Filter by Category
+    if (activeCategory !== "All") {
+      filtered = filtered.filter((p) => p.category === activeCategory);
+    }
     
-    // Reset to page 1 when category changes
     return filtered;
-  }, [activeCategory]);
+  }, [activeCategory, searchQuery]);
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
@@ -67,7 +91,7 @@ export default function ShopPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 md:px-4 py-16 md:py-20">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 py-16 md:py-20">
         <div className="flex flex-col md:flex-row gap-12">
           
           {/* Sidebar - Categories */}
@@ -185,7 +209,11 @@ export default function ShopPage() {
 
             {filteredProducts.length === 0 && (
               <div className="py-20 text-center">
-                <p className="text-[#a1a1a1] italic tracking-widest">No products found in this category.</p>
+                <p className="text-[#a1a1a1] italic tracking-widest">
+                  {searchQuery 
+                    ? `No results found for "${searchQuery}"` 
+                    : "No products found in this category."}
+                </p>
               </div>
             )}
           </div>

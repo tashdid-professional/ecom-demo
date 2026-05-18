@@ -29,7 +29,7 @@ export default function FeaturedProducts() {
   };
 
   return (
-    <section id="featured-products" className="w-full py-16 md:py-24 bg-white px-4 md:px-20 relative overflow-hidden">
+    <section id="featured-products" className="w-full py-16 md:py-24 bg-white px-4 md:px-20 relative">
       {/* Section Header */}
       <div className="text-center mb-12 md:mb-16 space-y-2">
         <h4 className="font-tuesday-night text-2xl md:text-3xl text-[#ecd1cd] lowercase">
@@ -45,18 +45,20 @@ export default function FeaturedProducts() {
 
       {/* Products Slider Container */}
       <div className="container mx-auto relative group px-0 md:px-12">
-        <div className="overflow-hidden">
-          <div
-            className="flex transition-transform duration-500 ease-out"
-            style={{
-              transform: `translateX(-${(currentIndex + itemsPerPage) * (100 / itemsPerPage)}%)`,
-            }}
-          >
-            {extendedProducts.map((product, index) => (
-              <div key={`${product.id}-${index}`} className="w-full sm:w-1/2 lg:w-1/4 flex-shrink-0 px-4">
-                <ProductCard product={product} />
-              </div>
-            ))}
+        <div className="relative">
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-out"
+              style={{
+                transform: `translateX(-${(currentIndex + itemsPerPage) * (100 / itemsPerPage)}%)`,
+              }}
+            >
+              {extendedProducts.map((product, index) => (
+                <div key={`${product.id}-${index}`} className="w-full sm:w-1/2 lg:w-1/4 flex-shrink-0 px-4">
+                  <ProductCard product={product} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

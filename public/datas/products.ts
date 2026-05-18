@@ -18,6 +18,7 @@ export interface Product {
   tags: string[];
   gallery: string[];
   videos: string[]; // YouTube video IDs
+  purchaseLink?: string;
   variantType?: string; // e.g., "Colors", "Flavors", "Sizes"
   variants?: ProductVariant[];
 }
@@ -54,7 +55,8 @@ export const products: Product[] = [
         gallery: ["https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg", "/Images/products/2.jpg"]
       }
     ],
-    videos: ["vP9X2V9c3Uw", "6H85SjZ6BIA"]
+    videos: ["vP9X2V9c3Uw", "6H85SjZ6BIA"],
+    purchaseLink: "#"
   },
   {
     id: 2,
@@ -67,7 +69,8 @@ export const products: Product[] = [
     slug: "wild-palettes",
     tags: ["Cosmetic", "Palettes"],
     gallery: ["/Images/products/2.jpg", "/Images/products/4.jpeg"],
-    videos: ["vP9X2V9c3Uw"]
+    videos: ["vP9X2V9c3Uw"],
+    purchaseLink: "#"
   },
   {
     id: 3,
@@ -80,7 +83,8 @@ export const products: Product[] = [
     slug: "rose-safari",
     tags: ["Classic", "Lipstick"],
     gallery: ["/Images/products/3.jpg"],
-    videos: ["vP9X2V9c3Uw"]
+    videos: ["vP9X2V9c3Uw"],
+    purchaseLink: "#"
   },
   {
     id: 4,
@@ -94,7 +98,8 @@ export const products: Product[] = [
     slug: "summer-mirage",
     tags: ["Summer", "Limited"],
     gallery: ["/Images/products/4.jpeg"],
-    videos: ["vP9X2V9c3Uw"]
+    videos: ["vP9X2V9c3Uw"],
+    purchaseLink: "#"
   },
   {
     id: 5,
@@ -108,7 +113,8 @@ export const products: Product[] = [
     slug: "summer-drama",
     tags: ["Drama", "Intense"],
     gallery: ["/Images/products/5.jpeg"],
-    videos: ["vP9X2V9c3Uw"]
+    videos: ["vP9X2V9c3Uw"],
+    purchaseLink: "#"
   },
   {
     id: 6,
@@ -122,7 +128,8 @@ export const products: Product[] = [
     slug: "velvet-matte",
     tags: ["Matte", "Velvet"],
     gallery: ["https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg"],
-    videos: ["vP9X2V9c3Uw"]
+    videos: ["vP9X2V9c3Uw"],
+    purchaseLink: "#"
   },
   {
     id: 7,
@@ -136,7 +143,8 @@ export const products: Product[] = [
     slug: "glow-serum",
     tags: ["Serum", "Glow"],
     gallery: ["https://images.pexels.com/photos/3618606/pexels-photo-3618606.jpeg"],
-    videos: ["vP9X2V9c3Uw"]
+    videos: ["vP9X2V9c3Uw"],
+    purchaseLink: "#"
   },
   {
     id: 8,
@@ -149,7 +157,8 @@ export const products: Product[] = [
     slug: "silk-foundation",
     tags: ["Foundation", "Silk"],
     gallery: ["https://images.pexels.com/photos/3321416/pexels-photo-3321416.jpeg"],
-    videos: ["vP9X2V9c3Uw"]
+    videos: ["vP9X2V9c3Uw"],
+    purchaseLink: "#"
   },
   {
     id: 9,
@@ -162,7 +171,8 @@ export const products: Product[] = [
     slug: "eyelash-curler",
     tags: ["Tools", "Curler"],
     gallery: ["https://images.pexels.com/photos/4620843/pexels-photo-4620843.jpeg"],
-    videos: ["vP9X2V9c3Uw"]
+    videos: ["vP9X2V9c3Uw"],
+    purchaseLink: "#"
   },
   {
     id: 10,
@@ -176,7 +186,8 @@ export const products: Product[] = [
     slug: "brow-gel",
     tags: ["Brows", "Gel"],
     gallery: ["https://images.pexels.com/photos/2688991/pexels-photo-2688991.jpeg"],
-    videos: ["vP9X2V9c3Uw"]
+    videos: ["vP9X2V9c3Uw"],
+    purchaseLink: "#"
   },
   {
     id: 11,
@@ -190,7 +201,8 @@ export const products: Product[] = [
     slug: "peach-blush",
     tags: ["Blush", "Peach"],
     gallery: ["https://images.pexels.com/photos/3762466/pexels-photo-3762466.jpeg"],
-    videos: ["vP9X2V9c3Uw"]
+    videos: ["vP9X2V9c3Uw"],
+    purchaseLink: "#"
   },
   {
     id: 12,
@@ -203,6 +215,7 @@ export const products: Product[] = [
     slug: "matte-bronzer",
     tags: ["Bronzer", "Matte"],
     gallery: ["https://images.pexels.com/photos/3321411/pexels-photo-3321411.jpeg"],
-    videos: ["vP9X2V9c3Uw"]
+    videos: ["vP9X2V9c3Uw"],
+    purchaseLink: "#"
   },
 ];
