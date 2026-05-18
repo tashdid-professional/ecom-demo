@@ -12,7 +12,7 @@ interface InstagramShowcaseProps {
 const InstagramShowcase: React.FC<InstagramShowcaseProps> = ({ posts }) => {
   return (
     <div className="w-full">
-      <div className="grid grid-cols-2 md:grid-cols-4 overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-4 overflow-hidden">
         {posts.map((post) => (
           <a 
             key={post.id} 
