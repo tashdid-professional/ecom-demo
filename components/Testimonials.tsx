@@ -45,7 +45,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="relative bg-[#fdf0ee] py-16 md:py-24 overflow-hidden min-h-[400px] flex items-center">
+    <section className="relative bg-[#fdf0ee] py-16 md:py-24 overflow-hidden min-h-[450px] md:min-h-[400px] flex items-center">
       {/* Background Floating Petals (Symbolic) */}
       <div className="absolute top-10 right-10 w-32 h-32 bg-[#700d33] rounded-full blur-3xl opacity-10 pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-48 h-48 bg-[#700d33] rounded-full blur-3xl opacity-10 pointer-events-none" />
@@ -59,7 +59,7 @@ export default function Testimonials() {
 
       <div className="container mx-auto px-6 relative z-10 text-center max-w-5xl">
         {/* Header */}
-        <div className="relative inline-block">
+        <div className="relative inline-block mb-8 md:mb-12">
           <h4 className="font-tuesday-night text-3xl md:text-4xl text-[#ecd1cd] absolute -top-8 md:-top-10 left-1/2 -translate-x-1/2 whitespace-nowrap">
             perfect shades
           </h4>
@@ -68,10 +68,10 @@ export default function Testimonials() {
           </h2>
         </div>
 
-        {/* Slider */}
-        <div className="relative group min-h-[250px] md:h-[200px] flex items-center justify-center">
-          <div className="max-w-4xl mx-auto w-full relative h-full flex items-center justify-center overflow-hidden">
-            <AnimatePresence initial={false} custom={direction}>
+        {/* Slider Container */}
+        <div className="relative group flex items-start justify-center">
+          <div className="max-w-4xl mx-auto w-full relative min-h-[250px] md:min-h-[200px] flex items-center justify-center overflow-hidden">
+            <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
                 key={currentIndex}
                 custom={direction}
@@ -83,9 +83,9 @@ export default function Testimonials() {
                   x: { type: "spring", stiffness: 300, damping: 30 },
                   opacity: { duration: 0.4 }
                 }}
-                className="absolute w-full px-4 md:px-0"
+                className="w-full px-4 md:px-0"
               >
-                <p className="font-cormorant italic text-[#444343] text-[18px] md:text-[25px] leading-relaxed mb-6 md:mb-8">
+                <p className="font-cormorant italic text-[#444343] text-[18px] md:text-[22px] lg:text-[25px] leading-relaxed mb-6 md:mb-8">
                   "{testimonials[currentIndex].content}"
                 </p>
                 <p className="font-cormorant text-[#6e6e6e] text-xs md:text-sm tracking-widest uppercase">

@@ -49,9 +49,9 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
             </div>
 
             {/* Image Side */}
-            <div className="w-full md:w-1/2 relative min-h-[500px] md:min-h-[600px] overflow-hidden">
+            <div className="w-full md:w-1/2 relative h-[400px] sm:h-[500px] md:min-h-[600px] overflow-hidden">
               {item.sideImage ? (
-                <div className="relative w-full h-full group overflow-hidden">
+                <div className="relative w-full h-full group">
                    <Image
                     src={item.sideImage}
                     alt={item.title}
