@@ -3,15 +3,41 @@
 import { products } from "@/public/datas/products";
 import ProductCard from "./ProductCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function FeaturedProducts() {
   const [currentIndex, setCurrentIndex] = useState(0);
   
   // Responsive items per page
-  // We'll use 1 for mobile, 2 for tablet, 4 for desktop
-  // But for the math, we'll keep it simple and base it on the view
-  const itemsPerPage = 4;
+  const [itemsPerPage, setItemsPerPage] = useState(4);
+
+  // Update items per page based on screen size
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      if (window.innerWidth < 640) {
+        setItemsPerPage(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsPerPage(2);
+      } else {
+        setItemsPerPage(4);
+      }
+    };
+
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
+    return () => window.removeEventListener("resize", updateItemsPerPage);
+  }, []);
+
+  // Auto-slide on mobile only
+  useEffect(() => {
+    if (itemsPerPage !== 1) return;
+
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 4000); // Slide every 4 seconds
+
+    return () => clearInterval(timer);
+  }, [itemsPerPage]);
   
   // Clone products for loop
   const extendedProducts = [
@@ -60,21 +86,21 @@ export default function FeaturedProducts() {
               ))}
             </div>
           </div>
-        </div>
 
-        {/* Carousel Arrows */}
-        <button
-          onClick={prevSlide}
-          className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 opacity-40 md:opacity-0 group-hover:opacity-40 hover:!opacity-100 transition-all p-2 z-10"
-        >
-          <ChevronLeft className="w-10 h-10 md:w-16 md:h-16" strokeWidth={0.5} />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 opacity-40 md:opacity-0 group-hover:opacity-40 hover:!opacity-100 transition-all p-2 z-10"
-        >
-          <ChevronRight className="w-10 h-10 md:w-16 md:h-16" strokeWidth={0.5} />
-        </button>
+          {/* Carousel Arrows - Positioned relative to the Image portion of the card */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 md:-left-12 top-[40%] md:top-[35%] -translate-y-1/2 opacity-40 md:opacity-0 group-hover:opacity-40 hover:!opacity-100 transition-all z-20"
+          >
+            <ChevronLeft className="w-10 h-10 md:w-16 md:h-16" strokeWidth={0.5} />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 md:-right-12 top-[40%] md:top-[35%] -translate-y-1/2 opacity-40 md:opacity-0 group-hover:opacity-40 hover:!opacity-100 transition-all z-20"
+          >
+            <ChevronRight className="w-10 h-10 md:w-16 md:h-16" strokeWidth={0.5} />
+          </button>
+        </div>
       </div>
     </section>
   );

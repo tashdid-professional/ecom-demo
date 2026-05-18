@@ -138,7 +138,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               <div className="flex flex-col gap-3 md:gap-4 mt-auto">
                 <Link 
                   href={`/product/${product.slug}`}
-                  className="w-full bg-[#1a1a1a] text-white text-center py-4 text-[11px] md:text-[12px] uppercase tracking-[0.3em] border border-transparent hover:bg-white hover:border-black hover:text-black transition-colors duration-500"
+                  className="w-full bg-[#1a1a1a] text-white text-center py-4 text-[12px] uppercase tracking-[0.3em] border border-[#1a1a1a] hover:bg-white hover:border-black hover:text-black transition-colors duration-500"
                 >
                   View Details
                 </Link>
