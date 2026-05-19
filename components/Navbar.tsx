@@ -47,8 +47,8 @@ export default function Navbar() {
       {/* Static White Navbar above Banner */}
       {!isScrolled && (
         <header className="w-full bg-white relative z-40">
-          <div className="hidden md:flex bg-black text-white text-[11px] px-6 py-2 justify-between items-center uppercase tracking-widest font-cormorant">
-            <div className="  tracking-normal">
+          <div className="hidden md:flex bg-black text-[#cecece] text-[15px] px-6 py-2 justify-between items-center  font-cormorant italic">
+            <div className="  tracking-[0.08em]">
               biagiotti@qodeinteractive.com
             </div>
             <div className="hidden md:block">
@@ -69,7 +69,7 @@ export default function Navbar() {
                   autoFocus={isSearchOpen}
                   type="text"
                   placeholder="Search..."
-                  className="w-full text-lg md:text-xl font-cormorant outline-none border-none uppercase tracking-[0.2em]"
+                  className="w-full text-lg md:text-xl font-cormorant outline-none border-none uppercase tracking-[0.08em]"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
@@ -81,14 +81,14 @@ export default function Navbar() {
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex flex-1"></div>
-            <div className="hidden lg:flex items-center space-x-12 uppercase text-[11px] tracking-[0.2em] font-lato absolute left-1/2 -translate-x-1/2 text-black">
-              <Link href="/" className={`relative py-1 border-b transition-all duration-300 ${pathname === "/" ? "border-black" : "border-transparent"} hover:border-black`}>Home</Link>
-              <Link href="/shop" className={`relative py-1 border-b transition-all duration-300 ${pathname === "/shop" ? "border-black" : "border-transparent"} hover:border-black`}>Shop</Link>
+            <div className="hidden lg:flex items-center space-x-12 uppercase text-[12px] tracking-[0.22em] font-lato absolute left-1/2 -translate-x-1/2 text-black">
+              <Link href="/" className={`relative  border-b transition-all duration-300 ${pathname === "/" ? "border-black" : "border-transparent"} hover:border-black`}>Home</Link>
+              <Link href="/shop" className={`relative  border-b transition-all duration-300 ${pathname === "/shop" ? "border-black" : "border-transparent"} hover:border-black`}>Shop</Link>
               <Link href="/" className="px-10">
                 <img src="/Images/logo.png" alt="Biagiotti Logo" width={160} height={40} className="h-10 w-auto" />
               </Link>
-              <Link href="/contact" className={`relative py-1 border-b transition-all duration-300 ${pathname === "/contact" ? "border-black" : "border-transparent"} hover:border-black`}>Contact</Link>
-              <Link href="/about" className={`relative py-1 border-b transition-all duration-300 ${pathname === "/about" ? "border-black" : "border-transparent"} hover:border-black`}>About</Link>
+              <Link href="/contact" className={`relative  border-b transition-all duration-300 ${pathname === "/contact" ? "border-black" : "border-transparent"} hover:border-black`}>Contact</Link>
+              <Link href="/about" className={`relative  border-b transition-all duration-300 ${pathname === "/about" ? "border-black" : "border-transparent"} hover:border-black`}>About</Link>
             </div>
 
             {/* Mobile & Tablet Layout */}
@@ -134,7 +134,7 @@ export default function Navbar() {
                 autoFocus={isSearchOpen}
                 type="text"
                 placeholder="SEARCH PRODUCTS..."
-                className="w-full text-xl md:text-2xl font-lato uppercase tracking-[0.2em] outline-none border-none text-black"
+                className="w-full text-xl md:text-2xl font-lato uppercase tracking-[0.08em] outline-none border-none text-black"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -148,7 +148,7 @@ export default function Navbar() {
           <div className="hidden lg:flex flex-1"></div>
           
           <>
-            <div className="hidden lg:flex items-center space-x-12 uppercase text-[11px] tracking-[0.2em] font-lato absolute left-1/2 -translate-x-1/2 text-white">
+            <div className="hidden lg:flex items-center space-x-12 uppercase text-[11px] tracking-[0.08em] font-lato absolute left-1/2 -translate-x-1/2 text-white">
               <Link href="/" className={`relative py-1 border-b transition-all duration-300 ${pathname === "/" ? "border-white" : "border-transparent"} hover:border-white`}>Home</Link>
               <Link href="/shop" className={`relative py-1 border-b transition-all duration-300 ${pathname === "/shop" ? "border-white" : "border-transparent"} hover:border-white`}>Shop</Link>
               <Link href="/" className="px-10">

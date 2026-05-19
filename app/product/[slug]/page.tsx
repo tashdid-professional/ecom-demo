@@ -34,8 +34,8 @@ export default function ProductDetailsPage() {
         <Navbar />
         
         <div className="container mx-auto px-4 py-40 text-center">
-          <h2 className="text-2xl tracking-widest uppercase">Product Not Found</h2>
-          <Link href="/shop" className="mt-8 inline-block text-sm tracking-widest uppercase border-b border-black pb-1">Back to Shop</Link>
+          <h2 className="text-2xl tracking-[0.08em] uppercase">Product Not Found</h2>
+          <Link href="/shop" className="mt-8 inline-block text-sm tracking-[0.08em] uppercase border-b border-black pb-1">Back to Shop</Link>
         </div>
         <Footer />
       </main>
@@ -62,10 +62,10 @@ export default function ProductDetailsPage() {
           priority
         />
         <div className="relative text-center z-10 px-4">
-          <h1 className="text-3xl md:text-5xl tracking-[0.2em] font-light uppercase mb-4">
+          <h1 className="text-3xl md:text-5xl tracking-[0.08em] font-light uppercase mb-4">
             SHOP
           </h1>
-          <div className="flex items-center justify-center gap-2 text-[10px] md:text-[11px] tracking-[0.3em] font-medium uppercase text-[#666]">
+          <div className="flex items-center justify-center gap-2 text-[10px] md:text-[11px] tracking-[0.08em] font-medium uppercase text-[#666]">
             <Link href="/" className="hover:text-black transition-colors">Home</Link>
             <span>/</span>
             <Link href="/shop" className="hover:text-black transition-colors">Shop</Link>
@@ -97,7 +97,7 @@ export default function ProductDetailsPage() {
             <div className="order-1 md:order-2 flex-1 relative aspect-[3/4] bg-[#fcf9f9]">
               <Image src={mainImage} alt={product.name} fill className="object-cover" priority />
               {product.badge && (
-                <span className="absolute top-0 right-0 bg-[#fde9e4] px-6 md:px-8 py-2 text-[10px] md:text-xs font-cormorant italic tracking-[0.2em] z-10">
+                <span className="absolute top-0 right-0 bg-[#fde9e4] px-6 md:px-8 py-2 text-[10px] md:text-xs font-cormorant italic tracking-[0.08em] z-10">
                   {product.badge}
                 </span>
               )}
@@ -106,7 +106,7 @@ export default function ProductDetailsPage() {
 
           {/* Right: Product Info */}
           <div className="flex flex-col justify-center max-w-lg">
-            <h1 className="text-2xl md:text-4xl tracking-[0.15em] uppercase text-black mb-4 font-light">
+            <h1 className="text-2xl md:text-4xl tracking-[0.08em] uppercase text-black mb-4 font-light">
               {product.name}
             </h1>
             
@@ -128,7 +128,7 @@ export default function ProductDetailsPage() {
             {/* Variants / Dynamic Selection */}
             {product.variants && product.variants.length > 0 && (
               <div className="mb-8 md:mb-10">
-                <span className="text-[10px] md:text-[11px] tracking-[0.2em] uppercase text-black font-semibold block mb-4">
+                <span className="text-[10px] md:text-[11px] tracking-[0.08em] uppercase text-black font-semibold block mb-4">
                   {product.variantType || "Choose Option"}
                 </span>
                 <div className="flex flex-wrap gap-3 md:gap-4">
@@ -136,7 +136,7 @@ export default function ProductDetailsPage() {
                     <button
                       key={idx}
                       onClick={() => setSelectedVariant(variant)}
-                      className={`px-3 md:px-4 py-2 border text-[9px] md:text-[10px] tracking-[0.2em] uppercase transition-all ${
+                      className={`px-3 md:px-4 py-2 border text-[9px] md:text-[10px] tracking-[0.08em] uppercase transition-all ${
                         selectedVariant?.name === variant.name
                           ? "border-black text-black bg-white"
                           : "border-[#eee] text-[#999] hover:border-black hover:text-black"
@@ -155,7 +155,7 @@ export default function ProductDetailsPage() {
                 href={product.purchaseLink || "#"} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-full md:w-auto px-12 bg-black text-white h-14 flex items-center justify-center text-[11px] md:text-xs tracking-[0.2em] uppercase hover:bg-[#ffffff] hover:border-black hover:border hover:text-black transition-all duration-500"
+                className="w-full md:w-auto px-12 bg-black text-white h-14 flex items-center justify-center text-[11px] md:text-xs tracking-[0.08em] uppercase hover:bg-[#ffffff] hover:border-black hover:border hover:text-black transition-all duration-500"
               >
                 Purchase
               </a>
@@ -163,10 +163,10 @@ export default function ProductDetailsPage() {
 
             {/* Meta */}
             <div className="space-y-2 pt-6 md:pt-8 border-t border-[#eee]">
-              <p className="text-[10px] md:text-[11px] tracking-[0.1em] uppercase text-black font-semibold">
+              <p className="text-[10px] md:text-[11px] tracking-[0.08em] uppercase text-black font-semibold">
                 Category: <span className="font-normal text-[#777] ml-2">{product.category}</span>
               </p>
-              <p className="text-[10px] md:text-[11px] tracking-[0.1em] uppercase text-black font-semibold">
+              <p className="text-[10px] md:text-[11px] tracking-[0.08em] uppercase text-black font-semibold">
                 Tags: <span className="font-normal text-[#777] ml-2">{product.tags.join(", ")}</span>
               </p>
             </div>
@@ -178,7 +178,7 @@ export default function ProductDetailsPage() {
           <div className="flex flex-wrap justify-start gap-4 mb-2">
             <button 
               onClick={() => setActiveTab("description")}
-              className={`flex-1 md:flex-none px-6 md:px-8 py-3 text-[10px] md:text-[11px] tracking-[0.2em] uppercase transition-all border ${
+              className={`flex-1 md:flex-none px-6 md:px-8 py-3 text-[10px] md:text-[11px] tracking-[0.08em] uppercase transition-all border ${
                 activeTab === 'description' 
                 ? 'text-black border-black' 
                 : 'text-[#a1a1a1] border-[#eee] hover:border-[#ccc]'
@@ -188,7 +188,7 @@ export default function ProductDetailsPage() {
             </button>
             <button 
               onClick={() => setActiveTab("videos")}
-              className={`flex-1 md:flex-none px-6 md:px-8 py-3 text-[10px] md:text-[11px] tracking-[0.2em] uppercase transition-all border ${
+              className={`flex-1 md:flex-none px-6 md:px-8 py-3 text-[10px] md:text-[11px] tracking-[0.08em] uppercase transition-all border ${
                 activeTab === 'videos' 
                 ? 'text-black border-black' 
                 : 'text-[#a1a1a1] border-[#eee] hover:border-[#ccc]'
@@ -229,7 +229,7 @@ export default function ProductDetailsPage() {
         {/* Related Products */}
         {relatedProducts.length > 0 && (
           <div className="mt-20 md:mt-32">
-            <h2 className="text-xl md:text-2xl tracking-[0.15em] uppercase text-center mb-12 md:mb-16 font-light">Related Products</h2>
+            <h2 className="text-xl md:text-2xl tracking-[0.08em] uppercase text-center mb-12 md:mb-16 font-light">Related Products</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
               {relatedProducts.map((rel) => (
                 <ProductCard key={rel.id} product={rel} />

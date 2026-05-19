@@ -57,14 +57,14 @@ export default function FeaturedProducts() {
   return (
     <section id="featured-products" className="w-full py-16 md:py-24 bg-white px-4 md:px-20 relative">
       {/* Section Header */}
-      <div className="text-center mb-12 md:mb-16 space-y-2">
-        <h4 className="font-tuesday-night text-2xl md:text-3xl text-[#ecd1cd] lowercase">
+      <div className="text-center mb-12 md:mb-16 ">
+        <h4 className="font-tuesday-night text-2xl md:text-4xl text-[#e5e5e5] lowercase">
           perfect shades
         </h4>
-        <h2 className="font-lato text-2xl md:text-3xl tracking-[0.2em] uppercase text-black px-4 md:px-0">
+        <h2 className="font-lato text-2xl md:text-3xl tracking-[0.08em] uppercase text-black px-4 md:px-0">
           Featured Products
         </h2>
-        <p className="font-cormorant italic text-[#999] text-base md:text-lg">
+        <p className="font-cormorant italic text-[#5a5a5a] text-base md:text-[22px]">
           At vero eos et accusamus et iusto
         </p>
       </div>

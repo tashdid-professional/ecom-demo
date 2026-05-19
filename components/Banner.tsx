@@ -107,18 +107,18 @@ export default function Banner() {
                 opacity: { duration: 0.3 },
               }}
             >
-              <h3 className="text-3xl md:text-5xl font-tuesday-night text-white md:text-black mb-4 md:-mt-10 md:-mb-1">
+              <h3 className="text-3xl md:text-5xl font-tuesday-night text-white md:text-black mb-4 md:-mt-10 md:-mb-1 mt-6">
                 {slide.subtitle}
               </h3>
-              <h2 className="text-4xl md:text-[70px] font-lato font-light uppercase tracking-[0.15em] leading-[1.1] md:leading-[0.9] text-white md:text-black mb-6 md:mb-8 md:whitespace-nowrap">
+              <h2 className="text-4xl md:text-[70px] font-lato font-light uppercase tracking-[0.08em] leading-[1.1] md:leading-[0.9] text-white md:text-black mb-6 md:mb-8 md:whitespace-nowrap">
                 {slide.title}
               </h2>
-              <p className="font-cormorant italic text-base md:text-lg text-white md:text-gray-800 leading-relaxed max-w-lg mb-8 md:mb-10 mx-auto md:mx-0">
+              <p className="font-cormorant italic text-base md:text-[22px] text-white md:text-gray-800  max-w-lg mb-8 md:mb-10 mx-auto md:mx-0 leading-[27px]">
                 {slide.description}
               </p>
               <a 
                 href={slide.buttonLink}
-                className="inline-block bg-white md:bg-black text-black md:text-white px-8 md:px-10 py-4 md:py-5 text-[10px] md:text-[11px] font-lato uppercase tracking-[0.3em] hover:bg-black md:hover:bg-white hover:text-white md:hover:text-black border border-white md:border-black transition-all duration-300"
+                className="inline-block bg-white md:bg-black text-black md:text-white px-8 md:px-10 py-4 md:py-5 text-[10px] md:text-[11px] font-lato uppercase tracking-[0.08em] hover:bg-black md:hover:bg-white hover:text-white md:hover:text-black border border-white md:border-black transition-all duration-300"
               >
                 View More
               </a>

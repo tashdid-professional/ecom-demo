@@ -23,6 +23,7 @@ function ShopContent() {
   const searchQuery = searchParams.get("search") || "";
   
   const [activeCategory, setActiveCategory] = useState("All");
+  const [sortOrder, setSortOrder] = useState("a-z");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
 
@@ -32,9 +33,9 @@ function ShopContent() {
     return ["All", ...uniqueCategories.sort()];
   }, []);
 
-  // Filter products based on active category and search query
+  // Filter and Sort products based on active category, search query, and sort order
   const filteredProducts = useMemo(() => {
-    let filtered = products;
+    let filtered = [...products];
 
     // Filter by Search Query
     if (searchQuery) {
@@ -50,9 +51,27 @@ function ShopContent() {
     if (activeCategory !== "All") {
       filtered = filtered.filter((p) => p.category === activeCategory);
     }
+
+    // Apply Sorting
+    filtered.sort((a, b) => {
+      switch (sortOrder) {
+        case "a-z":
+          return a.name.localeCompare(b.name);
+        case "z-a":
+          return b.name.localeCompare(a.name);
+        case "price-low":
+          return a.price - b.price;
+        case "price-high":
+          return b.price - a.price;
+        case "newest":
+          return b.id - a.id;
+        default:
+          return 0;
+      }
+    });
     
     return filtered;
-  }, [activeCategory, searchQuery]);
+  }, [activeCategory, searchQuery, sortOrder]);
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
@@ -80,10 +99,10 @@ function ShopContent() {
           priority
         />
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-3xl md:text-5xl font-light tracking-[0.2em] text-[#1a1a1a] uppercase mb-4">
+          <h1 className="text-3xl md:text-5xl font-light tracking-[0.08em] text-[#1a1a1a] uppercase mb-4">
             Shop
           </h1>
-          <div className="flex items-center justify-center gap-2 text-[10px] md:text-[11px] tracking-[0.3em] font-medium uppercase text-[#666]">
+          <div className="flex items-center justify-center gap-2 text-[10px] md:text-[11px] tracking-[0.08em] font-medium uppercase text-[#666]">
             <Link href="/" className="hover:text-black transition-colors">Home</Link>
             <span>/</span>
             <span className="text-black">Shop</span>
@@ -97,7 +116,7 @@ function ShopContent() {
           {/* Sidebar - Categories */}
           <aside className="w-full md:w-1/4">
             <div className="sticky top-24">
-              <h2 className="text-xl tracking-[0.15em] text-[#1a1a1a] uppercase mb-6 md:mb-10 pb-4 border-b border-[#eee]">
+              <h2 className="text-xl tracking-[0.08em] text-[#1a1a1a] uppercase mb-6 md:mb-10 pb-4 border-b border-[#eee]">
                 Categories
               </h2>
               {/* Desktop Categories List */}
@@ -106,7 +125,7 @@ function ShopContent() {
                   <li key={category}>
                     <button
                       onClick={() => handleCategoryChange(category)}
-                      className={`text-[12px] tracking-[0.1em] uppercase transition-colors duration-300 flex justify-between w-full group ${
+                      className={`text-[12px] tracking-[0.08em] uppercase transition-colors duration-300 flex justify-between w-full group ${
                         activeCategory === category
                           ? "text-[#d4b1a4]"
                           : "text-[#777] hover:text-[#1a1a1a]"
@@ -134,7 +153,7 @@ function ShopContent() {
                   <button
                     key={category}
                     onClick={() => handleCategoryChange(category)}
-                    className={`px-4 py-2 rounded-full text-[10px] tracking-[0.1em] uppercase transition-all duration-300 border ${
+                    className={`px-4 py-2 rounded-full text-[10px] tracking-[0.08em] uppercase transition-all duration-300 border ${
                       activeCategory === category
                         ? "bg-[#1a1a1a] text-white border-[#1a1a1a] shadow-sm"
                         : "bg-white text-[#777] border-[#eee] hover:border-[#1a1a1a] hover:text-[#1a1a1a]"
@@ -153,11 +172,25 @@ function ShopContent() {
           {/* Product Grid */}
           <div className="w-full md:w-3/4">
             {/* Sorting/Info bar */}
-            <div className="flex justify-between items-center mb-10 pb-4 border-b border-[#eee]">
-              <p className="text-xs uppercase tracking-widest text-[#a1a1a1]">
+            <div className="flex flex-col sm:flex-row justify-between items-center mb-10 pb-4 border-b border-[#eee] gap-4">
+              <p className="text-xs uppercase tracking-[0.08em] text-[#a1a1a1]">
                 Showing <span className="text-[#1a1a1a]">{(currentPage - 1) * itemsPerPage + 1}–{Math.min(currentPage * itemsPerPage, filteredProducts.length)}</span> of <span className="text-[#1a1a1a]">{filteredProducts.length}</span> results
               </p>
               
+              <div className="flex items-center gap-2">
+                <span className="text-[12px] uppercase tracking-[0.08em] ">Sort By:</span>
+                <select 
+                  value={sortOrder}
+                  onChange={(e) => setSortOrder(e.target.value)}
+                  className="text-[12px] uppercase tracking-[0.08em] bg-transparent border-none outline-none cursor-pointer font-medium text-[#1a1a1a]  transition-colors"
+                >
+                  <option value="a-z">Alphabetically, A-Z</option>
+                  <option value="z-a">Alphabetically, Z-A</option>
+                  <option value="price-low">Price, Low to High</option>
+                  <option value="price-high">Price, High to Low</option>
+                  <option value="newest">Newest First</option>
+                </select>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
@@ -172,7 +205,7 @@ function ShopContent() {
                 <button
                   onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
                   disabled={currentPage === 1}
-                  className={`w-10 h-10 border border-[#eee] flex items-center justify-center text-xs tracking-widest transition-all ${
+                  className={`w-10 h-10 border border-[#eee] flex items-center justify-center text-xs tracking-[0.08em] transition-all ${
                     currentPage === 1 ? "opacity-30 cursor-not-allowed" : "hover:bg-[#1a1a1a] hover:text-white"
                   }`}
                 >
@@ -198,7 +231,7 @@ function ShopContent() {
                 <button
                   onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
                   disabled={currentPage === totalPages}
-                  className={`w-10 h-10 border border-[#eee] flex items-center justify-center text-xs tracking-widest transition-all ${
+                  className={`w-10 h-10 border border-[#eee] flex items-center justify-center text-xs tracking-[0.08em] transition-all ${
                     currentPage === totalPages ? "opacity-30 cursor-not-allowed" : "hover:bg-[#1a1a1a] hover:text-white"
                   }`}
                 >
@@ -209,7 +242,7 @@ function ShopContent() {
 
             {filteredProducts.length === 0 && (
               <div className="py-20 text-center">
-                <p className="text-[#a1a1a1] italic tracking-widest">
+                <p className="text-[#a1a1a1] italic tracking-[0.08em]">
                   {searchQuery 
                     ? `No results found for "${searchQuery}"` 
                     : "No products found in this category."}

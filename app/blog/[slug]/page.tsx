@@ -33,10 +33,10 @@ export default async function BlogDetails({
           priority
         />
         <div className="relative text-center z-10 px-4">
-          <h1 className="text-3xl md:text-5xl tracking-[0.2em] font-light uppercase mb-4">
+          <h1 className="text-3xl md:text-5xl tracking-[0.08em] font-light uppercase mb-4">
             Blog
           </h1>
-          <div className="flex items-center justify-center gap-2 text-[10px] md:text-[11px] tracking-[0.3em] font-medium uppercase text-[#666]">
+          <div className="flex items-center justify-center gap-2 text-[10px] md:text-[11px] tracking-[0.08em] font-medium uppercase text-[#666]">
             <Link href="/" className="hover:text-black transition-colors">Home</Link>
             <span>/</span>
             <Link href="/blog" className="hover:text-black transition-colors">Blog</Link>
@@ -62,7 +62,7 @@ export default async function BlogDetails({
 
         {/* Content Section */}
         <div className="container mx-auto px-6 md:px-4 max-w-4xl">
-          <div className="flex flex-wrap items-center justify-center gap-2 text-[13px] md:text-[14px] font-cormorant italic text-[#999] mb-4">
+          <div className="flex flex-wrap items-center justify-center gap-2 text-[13px] md:text-[18px] font-cormorant italic text-[#999] mb-4 lg:mb-1">
             <span>{blog.month} {blog.day}</span>
             <span className="font-lato">-</span>
             <span className="px-1">{blog.category}</span>
@@ -70,31 +70,31 @@ export default async function BlogDetails({
             <span className="px-1">By {blog.author}</span>
           </div>
           
-          <h2 className="text-xl md:text-4xl tracking-[0.1em] text-black mb-6 md:mb-8 leading-tight uppercase font-light text-center">
+          <h2 className="text-xl md:text-3xl tracking-[0.08em] text-black mb-6 md:mb-8 leading-tight uppercase  text-center">
             {blog.title}
           </h2>
 
           <div className="space-y-6 text-[#6b6565] font-cormorant text-base md:text-lg leading-relaxed text-justify">
             <p className="whitespace-pre-line">
-              {blog.description}
+              {blog.description1}
             </p>
             
             {/* Blockquote Style as seen in design */}
             <div className="py-2 md:py-4 my-4 md:my-6 italic">
-               <p className="text-lg md:text-xl font-cormorant text-[#1a1a1a] text-center leading-snug max-w-3xl mx-auto">
-                 "Et qui falli latine consequuntur. In appellantur concludaturque pro. Commune scriptorem ad pri, ut euripidis posidonium has. Eum ei verear dolorum."
+               <p className="text-lg md:text-[22px] font-cormorant text-[#3f3e3e] text-center leading-snug max-w-3xl mx-auto">
+                 {blog.descriptionmiddle}
                </p>
             </div>
 
             <p>
-              {blog.description}
+              {blog.description2}
             </p>
           </div>
         </div>
 
         {/* Comment Form Section */}
         <div className="container mx-auto px-6 md:px-4 max-w-4xl mt-20 border-t border-gray-100 pt-16">
-          <h3 className="text-xl md:text-2xl tracking-[0.2em] text-black mb-10 uppercase ">
+          <h3 className="text-xl md:text-2xl tracking-[0.08em] text-black mb-10 uppercase ">
             Post a Comment
           </h3>
           
@@ -140,7 +140,7 @@ export default async function BlogDetails({
 
             <button
               type="submit"
-              className="mt-4 bg-black text-white px-12 py-4 text-[11px] tracking-[0.3em] font-lato uppercase hover:bg-[#ff3366] transition-colors duration-300"
+              className="mt-4 bg-black text-white px-12 py-4 text-[11px] tracking-[0.08em] font-lato uppercase hover:bg-[#ff3366] transition-colors duration-300"
             >
               Submit
             </button>

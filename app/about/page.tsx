@@ -28,7 +28,7 @@ export default function AboutPage() {
             <span className="font-tuesday-night text-4xl md:text-5xl text-[#d4b1a4] block mb-2 opacity-60">
               {aboutData.subtitle}
             </span>
-            <h1 className="text-2xl md:text-3xl tracking-[0.125em] text-[#1a1a1a] uppercase leading-tight">
+            <h1 className="text-2xl md:text-3xl tracking-[0.08em] text-[#1a1a1a] uppercase leading-tight">
               {aboutData.title}
             </h1>
           </div>

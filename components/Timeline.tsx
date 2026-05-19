@@ -23,25 +23,25 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
             {/* Content Side */}
             <div className={`w-full md:w-1/2 p-10 md:p-24 flex flex-col justify-center bg-white relative ${item.isReversed ? 'md:pl-32' : 'md:pr-32'}`}>
               <div className="max-w-md mx-auto xl:mx-0">
-                <h4 className="font-tuesday-night text-3xl text-[#acaaaa] lowercase mb-2">
+                <h4 className="font-tuesday-night text-4xl text-[#d1d1d1] lowercase mb-2">
                   {item.subtitle}
                 </h4>
-                <h2 className="font-lato text-2xl md:text-3xl tracking-[0.2em] uppercase text-black mb-2 leading-tight md:whitespace-nowrap">
+                <h2 className="font-lato text-2xl md:text-3xl tracking-[0.08em] uppercase text-black mb-2 leading-tight md:whitespace-nowrap">
                   {item.title}
                 </h2>
                 <div className="mb-2">
-                   <p className="text-[#474747] italic font-cormorant text-xl leading-relaxed">
+                   <p className="text-[#5a5a5a] italic font-cormorant text-[22px] leading-[25px]">
                     {item.description1}
                   </p>
                 </div>
                 <div className="mb-10">
-                  <p className="text-[#808080] font-light text-[17px] leading-loose text-justify font-cormorant">
+                  <p className="text-[#838383] font-light text-[17px] leading-[23px] text-justify font-cormorant">
                     {item.description2}
                   </p>
                 </div>
                 <Link 
                   href={item.buttonLink}
-                  className="inline-block border border-[#1a1a1a] px-10 py-4 text-[11px] tracking-[0.3em] font-medium hover:bg-[#1a1a1a] hover:text-white transition-all duration-500 uppercase"
+                  className="inline-block border border-[#1a1a1a] px-10 py-4 text-[11px] tracking-[0.08em] font-medium hover:bg-[#1a1a1a] hover:text-white transition-all duration-500 uppercase"
                 >
                   {item.buttonText}
                 </Link>

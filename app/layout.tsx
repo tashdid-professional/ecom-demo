@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Lato, Cormorant_Garamond } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const lato = Lato({
   variable: "--font-lato",
@@ -35,7 +36,10 @@ export default function RootLayout({
       lang="en"
       className={`${lato.variable} ${cormorant.variable} ${tuesdayNight.variable} antialiased`}
     >
-      <body className="min-h-screen">{children}</body>
+      <body className="min-h-screen">
+        {children}
+        <ScrollToTop />
+      </body>
     </html>
   );
 }

@@ -16,10 +16,10 @@ const ContactPage = () => {
             <span className="font-tuesday-night text-4xl md:text-5xl text-[#d4b1a4] block mb-2 opacity-60">
               perfect shades
             </span>
-            <h1 className="text-2xl md:text-3xl tracking-[0.125em]  uppercase mb-3 md:mb-1">
+            <h1 className="text-2xl md:text-3xl tracking-[0.08em]  uppercase mb-3 md:mb-1">
               ASK US ANYTHING
             </h1>
-            <p className="text-[#8c8888] italic font-cormorant text-lg md:text-xl max-w-2xl mx-auto leading-relaxed px-2 md:px-0">
+            <p className="text-[#8c8888] italic font-cormorant text-lg md:text-[22px] max-w-2xl mx-auto leading-relaxed px-2 md:px-0">
               At vero eos et accusamus et iusto odio dignissimos ducimus qui <br className="hidden md:block" />
               blanditiis praesentium voluptatum deleniti atque.
             </p>
@@ -62,7 +62,7 @@ const ContactPage = () => {
             <div className=" flex justify-center">
               <button
                 type="submit"
-                className="bg-black text-white text-[12px] tracking-[0.3em] font-light py-5 px-12 hover:bg-[#d4b1a4] transition-colors duration-300 uppercase"
+                className="bg-black text-white text-[12px] tracking-[0.08em] font-light py-5 px-12 hover:bg-[#d4b1a4] transition-colors duration-300 uppercase"
               >
                 SEND MESSAGE
               </button>

@@ -23,10 +23,10 @@ export default function BlogPage() {
           priority
         />
         <div className="relative text-center z-10 px-4">
-          <h1 className="text-3xl md:text-5xl tracking-[0.2em] font-light uppercase mb-4">
+          <h1 className="text-3xl md:text-5xl tracking-[0.08em] font-light uppercase mb-4">
             Blog
           </h1>
-          <div className="flex items-center justify-center gap-2 text-[10px] md:text-[11px] tracking-[0.3em] font-medium uppercase text-[#666]">
+          <div className="flex items-center justify-center gap-2 text-[10px] md:text-[11px] tracking-[0.08em] font-medium uppercase text-[#666]">
             <Link href="/" className="hover:text-black transition-colors">Home</Link>
             <span>/</span>
             <span className="text-black">Blog</span>
@@ -52,7 +52,7 @@ export default function BlogPage() {
                 </Link>
 
                 {/* Meta */}
-                <div className="flex flex-wrap items-center gap-2 text-[13px] md:text-[14px] font-cormorant italic text-[#999] mb-4">
+                <div className="flex flex-wrap items-center gap-2 text-[13px] md:text-[17px] font-cormorant italic text-[#999] mb-4 lg:mb-1">
                   <span>{blog.month} {blog.day}</span>
                   <span className="font-lato">-</span>
                   <span className="hover:text-black cursor-pointer transition-colors px-1">{blog.category}</span>
@@ -61,8 +61,8 @@ export default function BlogPage() {
                 </div>
 
                 {/* Title */}
-                <h2 className="text-xl md:text-4xl tracking-[0.1em] text-black mb-4 md:mb-6 leading-tight">
-                  <Link href={`/blog/${blog.slug}`} className="hover:text-[#d4b1a4] transition-colors uppercase font-light">
+                <h2 className="text-xl md:text-4xl tracking-[0.08em] text-black mb-4 md:mb-2 leading-tight">
+                  <Link href={`/blog/${blog.slug}`} className=" transition-colors uppercase ">
                     {blog.title}
                   </Link>
                 </h2>
@@ -92,7 +92,7 @@ export default function BlogPage() {
               
               {/* Recent Posts Widget */}
               <div>
-                <h3 className="text-sm tracking-[0.2em] uppercase mb-8 border-b border-[#eee] pb-4">Recent Posts</h3>
+                <h3 className="text-sm tracking-[0.08em] uppercase mb-8 border-b border-[#eee] pb-4">Recent Posts</h3>
                 <div className="space-y-6">
                   {blogs.slice(0, 3).map(post => (
                     <div key={post.id} className="flex gap-4 group">
@@ -100,7 +100,7 @@ export default function BlogPage() {
                         <Image src={post.image} alt={post.title} fill className="object-cover" />
                       </div>
                       <div className="flex flex-col justify-center">
-                        <Link href={`/blog/${post.slug}`} className="text-xs tracking-[0.1em] uppercase hover:text-[#d4b1a4] transition-colors leading-relaxed">
+                        <Link href={`/blog/${post.slug}`} className="text-xs tracking-[0.08em] uppercase hover:text-[#d4b1a4] transition-colors leading-relaxed">
                           {post.title}
                         </Link>
                         <div className="flex items-center gap-1 text-[10px] text-[#999] uppercase mt-1">

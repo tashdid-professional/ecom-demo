@@ -32,7 +32,7 @@ const InstagramShowcase: React.FC<InstagramShowcaseProps> = ({ posts }) => {
             {/* Hover Overlay - Sliding from bottom */}
             <div className="absolute inset-0 flex items-center justify-center translate-y-full group-hover:translate-y-0 group-active:translate-y-0 transition-transform duration-700 ease-in-out z-10 p-2 md:p-3">
               <div className="bg-white w-full h-full flex flex-col items-center justify-center text-center shadow-sm px-4">
-                <h3 className="text-[#1a1a1a] text-sm md:text-base tracking-[0.2em] font-light uppercase mb-2">
+                <h3 className="text-[#1a1a1a] text-sm md:text-base tracking-[0.08em] font-light uppercase mb-2">
                   {post.title}
                 </h3>
                 <p className="text-[#a1a1a1] italic font-cormorant text-xs md:text-sm">

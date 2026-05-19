@@ -16,7 +16,7 @@ const Qualities: React.FC<QualitiesProps> = ({ data }) => {
           {data.map((item) => (
             <div key={item.id} className="flex flex-col items-center group">
               {/* Icon with pinkish blur background as seen in design */}
-              <div className="relative w-40 h-40 mb-8 flex items-center justify-center">
+              <div className="relative w-40 h-40 mb-4 flex items-center justify-center">
                 <div className="absolute inset-0 bg-[#fde9e4] rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
                 <div className="relative w-32 h-32">
                    <Image
@@ -29,11 +29,11 @@ const Qualities: React.FC<QualitiesProps> = ({ data }) => {
                 </div>
               </div>
               
-              <h3 className="text-lg tracking-[0.25em]  text-[#111111] mb-4 uppercase ">
+              <h3 className="text-[17px] tracking-[0.08em] text-black  mb-2 uppercase ">
                 {item.title}
               </h3>
               
-              <p className="text-[#666464]  font-cormorant text-[16px] leading-relaxed max-w-[200px]">
+              <p className="text-[#666464]  font-cormorant text-[17px] leading-relaxed max-w-[200px]">
                 {item.description}
               </p>
             </div>

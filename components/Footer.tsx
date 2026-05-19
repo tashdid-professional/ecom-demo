@@ -67,12 +67,12 @@ const Pinterest = ({ size = 16, strokeWidth = 1.5 }: { size?: number; strokeWidt
 
 export default function Footer() {
   return (
-    <footer className=" w-full bg-black text-white pt-16 md:pt-24 pb-12 px-6 md:px-40 relative">
-      <div className="container mx-auto">
+    <footer className=" w-full bg-black text-white pt-16 md:pt-24 pb-12 relative">
+      <div className="container mx-auto px-6 lg:px-24">
       <div className=" grid grid-cols-1 md:grid-cols-3 gap-12 items-start text-center">
         {/* Contact Column */}
         <div className="space-y-6 md:text-left">
-          <h4 className="uppercase text-[14px] font-lato tracking-[0.2em] mb-4 md:mb-8">Contact</h4>
+          <h4 className="uppercase text-[17px] font-lato tracking-[0.08em] mb-4 md:mb-8 ">Contact</h4>
           <div className="font-cormorant italic text-[#999] text-[17px] space-y-1">
             <p>Address: Seestrasse 21, Zurich</p>
             <p>E-mail: biagiotti@qodeinteractive.com</p>
@@ -114,31 +114,26 @@ export default function Footer() {
 
         {/* Collections/Links Column */}
         <div className="md:text-right flex flex-col items-center md:items-end gap-3">
-          <Link href="/" className="uppercase text-[14px] font-lato tracking-[0.2em] hover:text-[#d4b1a4] transition-colors">HOME</Link>
-          <Link href="/shop" className="uppercase text-[14px] font-lato tracking-[0.2em] hover:text-[#d4b1a4] transition-colors">SHOP</Link>
-          <Link href="/about" className="uppercase text-[14px] font-lato tracking-[0.2em] hover:text-[#d4b1a4] transition-colors">ABOUT</Link>
-          <Link href="/contact" className="uppercase text-[14px] font-lato tracking-[0.2em] hover:text-[#d4b1a4] transition-colors">CONTACT</Link>
-          <Link href="/blog" className="uppercase text-[14px] font-lato tracking-[0.2em] hover:text-[#d4b1a4] transition-colors">BLOG</Link>
+          <Link href="/" className="uppercase text-[17px] font-lato tracking-[0.08em] hover:text-[#d4b1a4] transition-colors">HOME</Link>
+          <Link href="/shop" className="uppercase text-[17px] font-lato tracking-[0.08em] hover:text-[#d4b1a4] transition-colors">SHOP</Link>
+          <Link href="/about" className="uppercase text-[17px] font-lato tracking-[0.08em] hover:text-[#d4b1a4] transition-colors">ABOUT</Link>
+          <Link href="/contact" className="uppercase text-[17px] font-lato tracking-[0.08em] hover:text-[#d4b1a4] transition-colors">CONTACT</Link>
+          <Link href="/blog" className="uppercase text-[17px] font-lato tracking-[0.08em] hover:text-[#d4b1a4] transition-colors">BLOG</Link>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="mt-16 md:mt-24 border-t border-white/10 pt-8 flex justify-center">
-        <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 uppercase text-[11px] font-lato tracking-[0.2em]">
+      <div className="mt-16 md:mt-24 border-t border-white/10 pt-6 flex flex-col items-center gap-4">
+        <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 uppercase text-[12px] font-lato tracking-[0.08em]">
           <Link href="#" className="hover:text-gray-400 transition-colors">Privacy Policy</Link>
           <Link href="#" className="hover:text-gray-400 transition-colors">Terms and Conditions</Link>
           <Link href="#" className="hover:text-gray-400 transition-colors">FAQ</Link>
-        
         </div>
+        <p className="text-[11px] font-lato tracking-[0.08em] text-[#666] uppercase">
+          © Pozo Beauty 2026 | Powered by <Link href="https://thebigdogdigital.com/" target="_blank" className="font-extrabold text-[#888] hover:text-white transition-colors">BigDogDigital</Link>
+        </p>
       </div>
 
-      {/* Floating TOP button */}
-      <div 
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="absolute right-6 bottom-12 border border-white/20 p-4 px-6 cursor-pointer hover:bg-white hover:text-black transition-all"
-      >
-        <span className="text-[10px] uppercase font-lato tracking-[0.2em]">Top</span>
-      </div>
       </div>
     </footer>
   );

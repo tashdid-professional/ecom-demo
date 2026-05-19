@@ -38,7 +38,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           {/* Image Container */}
           <div className="relative aspect-[4/5] bg-[#fcf9f9] flex items-center justify-center mb-6 overflow-hidden group/image">
             {product.badge && (
-              <span className="absolute top-0 right-0 bg-[#f8e4e1] px-6 py-1 text-[11px] font-cormorant italic tracking-widest z-10">
+              <span className="absolute top-0 right-0 bg-[#f8e4e1] px-6 py-1 text-[11px] font-cormorant italic tracking-[0.08em] z-10">
                 {product.badge}
               </span>
             )}
@@ -67,19 +67,19 @@ export default function ProductCard({ product }: ProductCardProps) {
 
           {/* Content */}
           <div className="space-y-1">
-            <h3 className="font-lato text-[17px] tracking-[0.2em] uppercase text-black hover:text-[#858584] transition-colors">
+            <h3 className="font-lato text-[17px] tracking-[0.08em] uppercase text-black hover:text-[#858584] transition-colors">
               {product.name}
             </h3>
-            <p className="font-cormorant italic text-[#999] text-[15px]">
+            <p className="font-cormorant  text-[#838383] text-[16px]">
               {product.category}
             </p>
-            <div className="flex justify-center items-center gap-2 pt-1">
+            <div className="flex justify-center items-center gap-2 ">
               {product.oldPrice && (
-                <span className="font-cormorant text-[#999] line-through text-[24px]">
+                <span className="font-cormorant text-[#999] line-through text-[22px]">
                   ${product.oldPrice.toFixed(2)}
                 </span>
               )}
-              <span className="font-cormorant text-black text-[24px]">
+              <span className="font-cormorant text-black text-[22px]">
                 ${product.price.toFixed(2)}
               </span>
             </div>
@@ -113,10 +113,10 @@ export default function ProductCard({ product }: ProductCardProps) {
 
             <div className="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center bg-white">
               <div className="mb-6">
-                <span className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] mb-2 block font-medium text-gray-500">
+                <span className="text-[10px] md:text-[11px] uppercase tracking-[0.08em] mb-2 block font-medium text-gray-500">
                   {product.category}
                 </span>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl tracking-[0.1em] text-black uppercase mb-3 md:mb-4 leading-tight">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl tracking-[0.08em] text-black uppercase mb-3 md:mb-4 leading-tight">
                   {product.name}
                 </h2>
                 <div className="flex items-center gap-3 mb-4 md:mb-6">
@@ -138,7 +138,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               <div className="flex flex-col gap-3 md:gap-4 mt-auto">
                 <Link 
                   href={`/product/${product.slug}`}
-                  className="w-full bg-[#1a1a1a] text-white text-center py-4 text-[12px] uppercase tracking-[0.3em] border border-[#1a1a1a] hover:bg-white hover:border-black hover:text-black transition-colors duration-500"
+                  className="w-full bg-[#1a1a1a] text-white text-center py-4 text-[12px] uppercase tracking-[0.08em] border border-[#1a1a1a] hover:bg-white hover:border-black hover:text-black transition-colors duration-500"
                 >
                   View Details
                 </Link>
@@ -146,7 +146,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                   href={product.purchaseLink || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full border border-gray-200 text-[#1a1a1a] text-center py-4 text-[11px] md:text-[12px] uppercase tracking-[0.3em] hover:border-black transition-colors duration-500"
+                  className="w-full border border-gray-200 text-[#1a1a1a] text-center py-4 text-[11px] md:text-[12px] uppercase tracking-[0.08em] hover:border-black transition-colors duration-500"
                 >
                   Purchase Now
                 </a>

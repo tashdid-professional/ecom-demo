@@ -142,7 +142,7 @@ export default function SideMenu({ isOpen, onClose }: SideMenuProps) {
             </div>
 
             <div className={`space-y-8 transition-all duration-700 delay-500 ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-              <h3 className="uppercase text-[16px] tracking-[0.3em] font-lato text-white mb-6">Collections</h3>
+              <h3 className="uppercase text-[16px] tracking-[0.08em] font-lato text-white mb-6">Collections</h3>
               <div className="space-y-4">
                 <Link href="/shop" onClick={onClose} className="block font-cormorant italic text-[20px] text-white/70 hover:text-white transition-colors">Organic Collections</Link>
                 <Link href="/shop" onClick={onClose} className="block font-cormorant italic text-[20px] text-white/70 hover:text-white transition-colors">ABCDEH Beauty - Forever Young</Link>
