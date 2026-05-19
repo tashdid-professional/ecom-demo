@@ -6,15 +6,15 @@ export default function ServiceStats() {
       <div className="container mx-auto px-10 md:px-20 lg:px-32">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12 lg:gap-20">
           {serviceStats.map((stat) => (
-            <div key={stat.id} className="flex flex-row items-center justify-center gap-4 md:gap-6">
+            <div key={stat.id} className="flex flex-row items-start justify-center gap-4 md:gap-6">
               {/* Number with script font */}
-              <span className="font-tuesday-night text-6xl md:text-7xl lg:text-8xl text-[#dad5d5] leading-none select-none flex-shrink-0">
+              <span className="font-tuesday-night text-6xl md:text-7xl lg:text-8xl text-[#dad5d5] leading-none select-none flex-shrink-0 mt-[-0.1em]">
                 {stat.number}
               </span>
               
               {/* Content */}
-              <div className="space-y-2 text-left">
-                <h3 className="font-lato text-[17px] tracking-[0.08em]  text-black uppercase">
+              <div className="space-y-1 text-left">
+                <h3 className="font-lato text-[17px] tracking-[0.08em] text-black uppercase leading-tight">
                   {stat.title}
                 </h3>
                 <p className="font-cormorant italic text-[#838383] text-[17px] leading-relaxed max-w-[200px] md:max-w-[240px]">
