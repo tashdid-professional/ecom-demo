@@ -60,7 +60,7 @@ export default function Banner() {
   const slide = bannerSlides[currentIndex];
 
   return (
-    <section className="relative w-full h-[400px] md:h-[600px] overflow-hidden flex items-center justify-center bg-black">
+    <section className="relative w-full h-[440px] md:h-[600px] overflow-hidden flex items-center justify-center bg-black">
       <AnimatePresence initial={false}>
         <motion.div
           key={currentIndex}
