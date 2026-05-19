@@ -16,7 +16,7 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
         {data.map((item, index) => (
           <div
             key={item.id}
-            className={`flex flex-col md:flex-row items-stretch ${
+            className={`flex flex-col-reverse md:flex-row items-stretch ${
               item.isReversed ? "md:flex-row-reverse" : ""
             }`}
           >
