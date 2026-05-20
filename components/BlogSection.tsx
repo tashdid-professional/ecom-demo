@@ -37,8 +37,8 @@ const BlogSection: React.FC<BlogSectionProps> = ({ blogs }) => {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* Date Tag */}
-                <div className="absolute top-4 left-4 bg-[#fde9e4]/95 px-3 py-2 text-center min-w-[50px] shadow-sm">
-                  <span className="block text-[10px] font-tuesday-night text-[#d4b1a4] leading-none mb-1">
+                <div className="absolute top-0 left-4 bg-[#fde9e4]/95 px-3 py-5 text-center min-w-[50px] shadow-sm">
+                  <span className="block text-[14px] font-tuesday-night text-[#d4b1a4] leading-none mb-1">
                     {blog.month}
                   </span>
                   <span className="block text-sm font-lato tracking-[0.08em] text-[#1a1a1a] leading-none">

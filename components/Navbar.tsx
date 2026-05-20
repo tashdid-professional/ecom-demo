@@ -47,16 +47,12 @@ export default function Navbar() {
       {/* Static White Navbar above Banner */}
       {!isScrolled && (
         <header className="w-full bg-white relative z-40">
-          <div className="hidden md:flex bg-black text-[#cecece] text-[15px] px-6 py-2 justify-between items-center  font-cormorant italic">
-            <div className="  tracking-[0.08em]">
-              biagiotti@qodeinteractive.com
-            </div>
+          <div className="hidden md:flex justify-center bg-black text-[#cecece] text-[15px] px-6 py-2 justify-between items-center  font-cormorant italic">
+            
             <div className="hidden md:block">
               Free shipping on international orders of $150+
             </div>
-            <div className="flex items-center gap-2">
-                Log In 
-            </div>
+            
           </div>
 
           <nav className="px-6 flex items-center relative border-b border-gray-100 h-[70px] md:h-[90px]">

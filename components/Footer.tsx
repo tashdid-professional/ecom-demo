@@ -129,8 +129,8 @@ export default function Footer() {
           <Link href="#" className="hover:text-gray-400 transition-colors">Terms and Conditions</Link>
           <Link href="#" className="hover:text-gray-400 transition-colors">FAQ</Link>
         </div>
-        <p className="text-[11px] font-lato tracking-[0.08em] text-[#666] uppercase">
-          © Pozo Beauty 2026 | Powered by <Link href="https://thebigdogdigital.com/" target="_blank" className="font-extrabold text-[#888] hover:text-white transition-colors">BigDogDigital</Link>
+        <p className="text-[11px] font-lato tracking-[0.08em] text-[#666] ">
+          © Pozo Beauty 2026 | Powered by <Link href="https://thebigdogdigital.com/" target="_blank" className="font-extrabold text-[#888] hover:text-white transition-colors">BigDog Digital</Link>
         </p>
       </div>
 
