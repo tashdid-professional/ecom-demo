@@ -58,7 +58,6 @@ export interface SocialLinks {
   facebook: string;
   instagram: string;
   tiktok: string;
-  pinterest?: string;
 }
 
 export const testimonials: Testimonial[] = [
@@ -262,6 +261,5 @@ export const aboutData: AboutData = {
 export const socialLinks: SocialLinks = {
   facebook: "https://facebook.com",
   instagram: "https://instagram.com",
-  tiktok: "https://tiktok.com",
-  pinterest: "https://pinterest.com"
+  tiktok: "https://tiktok.com"
 };

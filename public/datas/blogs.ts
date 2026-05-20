@@ -3,7 +3,6 @@ export interface Blog {
   slug: string;
   category: string;
   author: string;
-  date: string;
   day: string;
   month: string;
   title: string;
@@ -21,7 +20,6 @@ export const blogs: Blog[] = [
     slug: "the-cosmetics-world",
     category: "Lipstick",
     author: "Janny Joe",
-    date: "Apr 08",
     day: "08",
     month: "Apr",
     title: "THE COSMETICS WORLD",
@@ -37,7 +35,6 @@ export const blogs: Blog[] = [
     slug: "prep-a-good-primer",
     category: "Lipstick",
     author: "Janny Joe",
-    date: "Apr ",
     day: "09",
     month: "Apr",
     title: "PREP A GOOD PRIMER",
@@ -53,7 +50,6 @@ export const blogs: Blog[] = [
     slug: "know-how-to-apply-it",
     category: "Lipstick",
     author: "Janny Joe",
-    date: "Apr 08",
     day: "08",
     month: "Apr",
     title: "KNOW HOW TO APPLY IT",
@@ -68,7 +64,6 @@ export const blogs: Blog[] = [
     slug: "50-shades-of-testing texts",
     category: "idk",
     author: "Tashdid",
-    date: "Apr 08",
     day: "08",
     month: "Apr",
     title: "50 SHADES OF GREAT",
@@ -83,7 +78,6 @@ export const blogs: Blog[] = [
     slug: "summer-skincare-routine",
     category: "Skincare",
     author: "Elena Rose",
-    date: "May 12",
     day: "12",
     month: "May",
     title: "SUMMER SKINCARE ROUTINE",
@@ -99,7 +93,6 @@ export const blogs: Blog[] = [
     slug: "art-of-perfect-eyeliner",
     category: "Eyes",
     author: "Marco V",
-    date: "Jun 02",
     day: "02",
     month: "Jun",
     title: "ART OF PERFECT EYELINER",

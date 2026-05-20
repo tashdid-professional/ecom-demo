@@ -13,7 +13,6 @@ export interface Product {
   image: string;
   badge?: "Sale" | "New";
   description: string;
-  sku: string;
   slug: string;
   tags: string[];
   gallery: string[];
@@ -33,7 +32,6 @@ export const products: Product[] = [
     image: "/Images/products/1.jpg",
     badge: "Sale",
     description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut. Eu agam malorum nec. Eu has vide putent, dico option nominati no eam. Ea erant impetus consequuntur eos, velit congue vidisse eos ne.",
-    sku: "001",
     slug: "film-eyeshadow",
     tags: ["Cosmetic", "Make Up"],
     gallery: ["/Images/products/1.jpg", "/Images/products/2.jpg", "/Images/products/3.jpg"],
@@ -65,7 +63,6 @@ export const products: Product[] = [
     price: 25.0,
     image: "/Images/products/2.jpg",
     description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut. Eu agam malorum nec. Eu has vide putent, dico option nominati no eam.",
-    sku: "002",
     slug: "wild-palettes",
     tags: ["Cosmetic", "Palettes"],
     gallery: ["/Images/products/2.jpg", "/Images/products/4.jpeg"],
@@ -79,7 +76,6 @@ export const products: Product[] = [
     price: 35.0,
     image: "/Images/products/3.jpg",
     description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut. Eu agam malorum nec.",
-    sku: "003",
     slug: "rose-safari",
     tags: ["Classic", "Lipstick"],
     gallery: ["/Images/products/3.jpg"],
@@ -94,7 +90,6 @@ export const products: Product[] = [
     image: "/Images/products/4.jpeg",
     badge: "New",
     description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
-    sku: "004",
     slug: "summer-mirage",
     tags: ["Summer", "Limited"],
     gallery: ["/Images/products/4.jpeg"],
@@ -109,7 +104,6 @@ export const products: Product[] = [
     image: "/Images/products/5.jpeg",
     badge: "New",
     description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
-    sku: "005",
     slug: "summer-drama",
     tags: ["Drama", "Intense"],
     gallery: ["/Images/products/5.jpeg"],
@@ -124,7 +118,6 @@ export const products: Product[] = [
     image: "https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg",
     badge: "Sale",
     description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
-    sku: "006",
     slug: "velvet-matte",
     tags: ["Matte", "Velvet"],
     gallery: ["https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg"],
@@ -139,7 +132,6 @@ export const products: Product[] = [
     image: "https://images.pexels.com/photos/3618606/pexels-photo-3618606.jpeg",
     badge: "New",
     description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
-    sku: "007",
     slug: "glow-serum",
     tags: ["Serum", "Glow"],
     gallery: ["https://images.pexels.com/photos/3618606/pexels-photo-3618606.jpeg"],
@@ -153,7 +145,6 @@ export const products: Product[] = [
     price: 38.0,
     image: "https://images.pexels.com/photos/3321416/pexels-photo-3321416.jpeg",
     description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
-    sku: "008",
     slug: "silk-foundation",
     tags: ["Foundation", "Silk"],
     gallery: ["https://images.pexels.com/photos/3321416/pexels-photo-3321416.jpeg"],
@@ -167,7 +158,6 @@ export const products: Product[] = [
     price: 12.0,
     image: "https://images.pexels.com/photos/4620843/pexels-photo-4620843.jpeg",
     description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
-    sku: "009",
     slug: "eyelash-curler",
     tags: ["Tools", "Curler"],
     gallery: ["https://images.pexels.com/photos/4620843/pexels-photo-4620843.jpeg"],
@@ -182,7 +172,6 @@ export const products: Product[] = [
     image: "https://images.pexels.com/photos/2688991/pexels-photo-2688991.jpeg",
     badge: "New",
     description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
-    sku: "010",
     slug: "brow-gel",
     tags: ["Brows", "Gel"],
     gallery: ["https://images.pexels.com/photos/2688991/pexels-photo-2688991.jpeg"],
@@ -197,7 +186,6 @@ export const products: Product[] = [
     image: "https://images.pexels.com/photos/3762466/pexels-photo-3762466.jpeg",
     badge: "Sale",
     description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
-    sku: "011",
     slug: "peach-blush",
     tags: ["Blush", "Peach"],
     gallery: ["https://images.pexels.com/photos/3762466/pexels-photo-3762466.jpeg"],
@@ -211,7 +199,6 @@ export const products: Product[] = [
     price: 28.0,
     image: "https://images.pexels.com/photos/3321411/pexels-photo-3321411.jpeg",
     description: "An dico accommodare ius, porro mnesarchum pro in. Cetero fierent urbanitas eam id, sed movet voluptua ut.",
-    sku: "012",
     slug: "matte-bronzer",
     tags: ["Bronzer", "Matte"],
     gallery: ["https://images.pexels.com/photos/3321411/pexels-photo-3321411.jpeg"],
