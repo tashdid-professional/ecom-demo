@@ -23,7 +23,12 @@ const tuesdayNight = localFont({
 
 export const metadata: Metadata = {
   title: "Pozo Beauty",
-  description: "",
+  description: "Luxury Cosmetics & Beauty",
+  icons: {
+    icon: "/Images/logo.png",
+    shortcut: "/Images/logo.png",
+    apple: "/Images/logo.png",
+  },
 };
 
 export default function RootLayout({

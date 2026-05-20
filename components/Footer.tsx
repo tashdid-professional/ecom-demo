@@ -50,21 +50,6 @@ const Instagram = ({ size = 16, strokeWidth = 1.5 }: { size?: number; strokeWidt
   </svg>
 );
 
-const Pinterest = ({ size = 16, strokeWidth = 1.5 }: { size?: number; strokeWidth?: number }) => (
-  <svg
-    viewBox="0 0 24 24"
-    width={size}
-    height={size}
-    stroke="currentColor"
-    strokeWidth={strokeWidth}
-    fill="none"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M8 20c.3-1.6.6-3.1.9-4.7C8.1 14.2 7.5 12.8 7.5 11.2c0-2.6 1.5-4.5 3.3-4.5 1.6 0 2.3 1.2 2.3 2.6 0 1.6-1 3.9-1.5 6.1-.4 1.8.9 3.3 2.6 3.3 3.1 0 5.6-3.3 5.6-8.1 0-4.2-3-7.2-7.4-7.2-4.8 0-7.6 3.6-7.6 7.3 0 1.5.6 3 1.3 3.9.1.2.2.3.1.5-.1.5-.4 1.6-.4 1.8-.1.2-.2.3-.4.2-2.1-.9-3.4-3.9-3.4-6.3 0-5.1 3.7-9.8 10.7-9.8 5.6 0 10 4 10 9.3 0 5.6-3.5 10.1-8.4 10.1-1.6 0-3.2-.8-3.7-1.8 0 0-.9 3.4-1.1 4.1-.4 1.5-1.4 3.3-2.1 4.1L8 20z" />
-  </svg>
-);
-
 export default function Footer() {
   return (
     <footer className=" w-full bg-black text-white pt-16 md:pt-24 pb-12 relative">

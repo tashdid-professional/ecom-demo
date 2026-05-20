@@ -1,10 +1,58 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    website: "",
+    message: ""
+  });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", phone: "", website: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setStatus("error");
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { placeholder, value } = e.target;
+    // Mapping placeholder to state keys
+    const keyMap: { [key: string]: string } = {
+      "Full Name": "name",
+      "E-mail address": "email",
+      "Telephone": "phone",
+      "Website": "website",
+      "Message": "message"
+    };
+    const key = keyMap[placeholder];
+    if (key) {
+      setFormData(prev => ({ ...prev, [key]: value }));
+    }
+  };
+
   return (
     <main className="min-h-screen bg-white">
       <Navbar />
@@ -26,16 +74,22 @@ const ContactPage = () => {
           </div>
 
           {/* Contact Form */}
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <input
                 type="text"
                 placeholder="Full Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
                 className="w-full px-6 py-3 border border-gray-300 focus:border-[#d4b1a4] outline-none text-[#a1a1a1] italic font-cormorant text-lg transition-colors placeholder:text-[#a1a1a1]"
               />
               <input
                 type="email"
                 placeholder="E-mail address"
+                value={formData.email}
+                onChange={handleChange}
+                required
                 className="w-full px-6 py-3 border border-gray-300 focus:border-[#d4b1a4] outline-none text-[#a1a1a1] italic font-cormorant text-lg transition-colors placeholder:text-[#a1a1a1]"
               />
             </div>
@@ -44,11 +98,15 @@ const ContactPage = () => {
               <input
                 type="tel"
                 placeholder="Telephone"
+                value={formData.phone}
+                onChange={handleChange}
                 className="w-full px-6 py-3 border border-gray-300 focus:border-[#d4b1a4] outline-none text-[#a1a1a1] italic font-cormorant text-lg transition-colors placeholder:text-[#a1a1a1]"
               />
               <input
                 type="url"
                 placeholder="Website"
+                value={formData.website}
+                onChange={handleChange}
                 className="w-full px-6 py-3 border border-gray-300 focus:border-[#d4b1a4] outline-none text-[#a1a1a1] italic font-cormorant text-lg transition-colors placeholder:text-[#a1a1a1]"
               />
             </div>
@@ -56,16 +114,27 @@ const ContactPage = () => {
             <textarea
               placeholder="Message"
               rows={6}
+              value={formData.message}
+              onChange={handleChange}
+              required
               className="w-full px-6 py-4 border border-gray-300 focus:border-[#d4b1a4] outline-none text-[#a1a1a1] italic font-cormorant text-lg transition-colors placeholder:text-[#a1a1a1] resize-none"
             ></textarea>
 
-            <div className=" flex justify-center">
+            <div className=" flex flex-col items-center gap-4">
               <button
                 type="submit"
-                className="bg-black text-white text-[12px] tracking-[0.08em] font-light py-5 px-12 hover:bg-[#d4b1a4] transition-colors duration-300 uppercase"
+                disabled={status === "loading"}
+                className="bg-black text-white text-[12px] tracking-[0.08em] font-light py-5 px-12 hover:bg-[#d4b1a4] transition-colors duration-300 uppercase disabled:opacity-50"
               >
-                SEND MESSAGE
+                {status === "loading" ? "SENDING..." : "SEND MESSAGE"}
               </button>
+              
+              {status === "success" && (
+                <p className="text-green-600 font-cormorant italic">Message sent successfully!</p>
+              )}
+              {status === "error" && (
+                <p className="text-red-600 font-cormorant italic">Something went wrong. Please try again.</p>
+              )}
             </div>
           </form>
         </div>
